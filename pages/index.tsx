@@ -18,7 +18,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <h1>onehealthtookit super-admin dashboard</h1>
+        <h1 className="text-3xl font-bold underline">
+          onehealthtookit super-admin dashboard
+        </h1>
       </div>
     </>
   );
