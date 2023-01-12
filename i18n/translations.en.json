@@ -1,0 +1,74 @@
+{
+  "breadcrumb": {
+    "dashboard": "Dashboard",
+    "clients": "Clients",
+    "domains": "Domains",
+    "create": "Create",
+    "update": "Update",
+    "view": "View"
+  },
+  "filter": {
+    "searchButton": "Search",
+    "resetButton": "Reset",
+    "placeholder": "Search"
+  },
+  "table": {
+    "id": "ID",
+    "code": "Code",
+    "name": "Name",
+    "schemaName": "Schema Name",
+    "action": "Action",
+    "totalItems": "Total <1>{{count}} items</1>",
+    "paginate": "Page {{currentPages}} of {{numberOfPages}} <4>[{{totalCount}} records]</4>",
+    "notFound": "Data not found."
+  },
+  "form": {
+    "label": {
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "schemaName": "Schema Name",
+      "domain": "Domain",
+      "isPrimary": "Primary",
+      "description": "Description",
+      "ordering": "Ordering",
+      "username": "Username",
+      "password": "Password",
+      "selectItem": "Select item ...",
+      "action": "Action"
+    },
+    "placeholder": {
+      "code": "Code",
+      "name": "Name",
+      "schemaName": "Schema Name",
+      "domain": "Domain",
+      "description": "Description",
+      "ordering": "Ordering",
+      "username": "Username",
+      "password": "Password"
+    },
+    "button": {
+      "signin": "Sign In",
+      "signup": "Sign Up",
+      "delete": "Delete",
+      "add": "Add",
+      "save": "Save",
+      "cancel": "Cancel",
+      "next": "Next"
+    }
+  },
+  "dialog": {
+    "title": {
+      "confirmDelete": "Confirm Delete",
+      "confirmTransition": "Confirm transition"
+    },
+    "content": {
+      "confirmDelete": "Are you sure?",
+      "confirmTransition": "Are you want to change status to  {{stepName}} ?"
+    }
+  },
+  "title": {
+    "login": "Login to Your Account",
+    "signup": "Sign Up"
+  }
+}

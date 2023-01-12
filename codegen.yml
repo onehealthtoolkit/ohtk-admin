@@ -1,0 +1,12 @@
+overwrite: true
+schema: "https://opensur.test/graphql/"
+documents: "./lib/**/*.graphql"
+generates:
+  lib/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typed-document-node"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

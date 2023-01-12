@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main > div {
+  @apply pt-4 pb-4;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.table-filter {
+  @apply flex w-full md:flex-1;
+}
+
+input[required],
+select[required],
+textarea[required] {
+  background-color: #fcfbe7;
+}
+
+input[disabled] {
+  @apply bg-gray-100;
+}

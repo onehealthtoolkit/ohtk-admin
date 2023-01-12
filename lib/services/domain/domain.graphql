@@ -1,0 +1,57 @@
+mutation DomainCreate($clientId: ID!, $domain: String!, $isPrimary: Boolean!) {
+  adminDomainCreate(
+    clientId: $clientId
+    domain: $domain
+    isPrimary: $isPrimary
+  ) {
+    result {
+      __typename
+      ... on AdminDomainCreateSuccess {
+        id
+        domain
+        isPrimary
+      }
+      ... on AdminDomainCreateProblem {
+        fields {
+          name
+          message
+        }
+        message
+      }
+    }
+  }
+}
+
+mutation DomainUpdate($id: ID!, $domain: String!, $isPrimary: Boolean!) {
+  adminDomainUpdate(id: $id, domain: $domain, isPrimary: $isPrimary) {
+    result {
+      __typename
+      ... on AdminDomainUpdateSuccess {
+        id
+        domain
+        isPrimary
+      }
+      ... on AdminDomainUpdateProblem {
+        fields {
+          name
+          message
+        }
+        message
+      }
+    }
+  }
+}
+
+mutation DomainDelete($id: ID!) {
+  adminDomainDelete(id: $id) {
+    success
+  }
+}
+
+query GetDomain($id: ID!) {
+  adminDomainGet(id: $id) {
+    id
+    domain
+    isPrimary
+  }
+}

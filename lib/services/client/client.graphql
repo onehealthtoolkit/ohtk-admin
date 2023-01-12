@@ -1,0 +1,63 @@
+query Clients($limit: Int!, $offset: Int!, $q: String, $ordering: String) {
+  adminClientQuery(limit: $limit, offset: $offset, q: $q, ordering: $ordering) {
+    totalCount
+    results {
+      id
+      name
+      schemaName
+    }
+  }
+}
+
+mutation ClientCreate($name: String!, $schemaName: String!) {
+  adminClientCreate(name: $name, schemaName: $schemaName) {
+    result {
+      __typename
+      ... on AdminClientCreateSuccess {
+        id
+        name
+        schemaName
+      }
+      ... on AdminClientCreateProblem {
+        fields {
+          name
+          message
+        }
+        message
+      }
+    }
+  }
+}
+
+mutation ClientUpdate($id: ID!, $name: String!) {
+  adminClientUpdate(id: $id, name: $name) {
+    result {
+      __typename
+      ... on AdminClientUpdateSuccess {
+        id
+        name
+        schemaName
+      }
+      ... on AdminClientUpdateProblem {
+        fields {
+          name
+          message
+        }
+        message
+      }
+    }
+  }
+}
+
+query GetClient($id: ID!) {
+  adminClientGet(id: $id) {
+    id
+    name
+    schemaName
+    domains {
+      id
+      domain
+      isPrimary
+    }
+  }
+}

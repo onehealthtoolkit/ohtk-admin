@@ -1,21 +1,21 @@
-import { Inter } from "@next/font/google";
-import { useTranslation } from "react-i18next";
+import ClientList from "components/client/list";
 import Protect from "components/auth/protect";
 import Layout from "components/layout";
 import Breadcrumb from "components/layout/breadcrumb";
-import ClientList from "components/client/list";
+import { Store } from "lib/store";
+import { NextPage } from "next";
+import { useTranslation } from "react-i18next";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+const ClientsPage: NextPage = () => {
   const { t } = useTranslation();
-  // return <p>xx</p>;
+
   return (
-    <Protect>
+    <Protect guard={(store: Store) => store.isSuperUser}>
       <Layout>
         <Breadcrumb crumbs={[{ text: t("breadcrumb.clients", "Clients") }]} />
         <ClientList />
       </Layout>
     </Protect>
   );
-}
+};
+export default ClientsPage;

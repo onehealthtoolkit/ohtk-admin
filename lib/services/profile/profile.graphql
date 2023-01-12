@@ -1,0 +1,43 @@
+query me {
+  me {
+    id
+    username
+    firstName
+    lastName
+    authorityId
+    authorityName
+    avatarUrl
+    isSuperuser
+    isStaff
+    role
+    email
+    telephone
+  }
+}
+
+mutation userChangePassword($newPassword: String!) {
+  adminUserChangePassword(newPassword: $newPassword) {
+    success
+  }
+}
+
+mutation userUpdateProfile(
+  $firstName: String!
+  $lastName: String!
+  $telephone: String
+) {
+  adminUserUpdateProfile(
+    firstName: $firstName
+    lastName: $lastName
+    telephone: $telephone
+  ) {
+    success
+  }
+}
+
+mutation userUploadAvatar($image: Upload!) {
+  adminUserUploadAvatar(image: $image) {
+    success
+    avatarUrl
+  }
+}
